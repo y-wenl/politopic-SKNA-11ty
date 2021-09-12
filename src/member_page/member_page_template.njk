@@ -1,7 +1,7 @@
 ---
 session: 21
 pagination:
-    data: DEBUG_member_info
+    data: processed.DEBUG_members_fullinfo_session21
     size: 1
     resolve: values
     alias: member
@@ -222,14 +222,13 @@ permalink: "member_page_{{ member.member_id }}.html"
 
 <nav class="primary-nav" aria-label="메뉴">
     <ul>
-        <li><a href="/skna/" arial-label="한국국회 홈에 돌아가기">❰ 한국국회 홈</a></li>
+        <li><a href="/skna/index.html" arial-label="한국국회 홈에 돌아가기">❰ 한국국회 홈</a></li>
         <li class="member-search-li"><label>의원 검색:</label>
             <!--<input type="search" class="" placeholder="">-->
                 <!-- TODO: is haspopup="true" correct here?-->
             <select class="js-member-select" name="member" id="member-search-select" style="width: 50%" aria-haspopup="true">
                 <option value=""></option>
                 <!--TODO deal with different sessions-->
-                <!--TODO Make selection work-->
                 {% for mem_id,mem in member_info_data_session21 %}
                 <option value="/skna/member_page_{{ mem_id }}.html">{{ mem.name }} - {{ mem.district }}</option>
                 {% endfor %}
@@ -255,11 +254,19 @@ permalink: "member_page_{{ member.member_id }}.html"
     </tr>
     <tr>
         <th scope="row">정당 충실</th>
-        <td>TODO xxx (yyy of zzz)</td>
+        {% if member.loyalty %}
+        <td>{{ member.loyalty.toFixed(2) }} (국회: {{ member.loyalty_rank }}번째/{{ member.totalmembers }}; 정당: {{ member.loyalty_party_rank }}번째/{{ member.partysize }})</td>
+        {% else %}
+        <td>해당 없음</td>
+        {% endif %}
     </tr>
     <tr>
         <th scope="row">결석속도</th>
-        <td>TODO xxx (yyy of zzz)</td>
+        {% if member.absenteeism %}
+        <td>{{ (member.absenteeism*100).toFixed(1) }}% (국회: {{ member.absenteeism_rank }}번째/{{ member.totalmembers }}; 정당: {{ member.absenteeism_party_rank }}번째/{{ member.partysize }})</td>
+        {% else %}
+        <td></td>
+        {% endif %}
     </tr>
     <tr>
         <th scope="row">선거구</th>
