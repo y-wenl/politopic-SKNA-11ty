@@ -10,7 +10,7 @@ module.exports = function(eleventyConfig) {
       input: 'src',
       output: 'dist',
       pathPrefix: "/skna/",
-      data: '../../data/',
+      data: '../../data/processed/',
     },
   };
 };

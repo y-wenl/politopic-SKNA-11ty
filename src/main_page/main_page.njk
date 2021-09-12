@@ -196,7 +196,7 @@ permalink: "index.html"
             <select class="js-member-select" name="member" id="member-search-select" style="width: 50%" aria-haspopup="true">
                 <option value=""></option>
                 <!--TODO deal with different sessions-->
-                {% for mem_id,mem in member_info_data_session21 %}
+                {% for mem_id,mem in members_fullinfo_session21 %}
                 <option value="/skna/member_page_{{ mem_id }}.html">{{ mem.name }} - {{ mem.district }}</option>
                 {% endfor %}
             </select>
