@@ -80,7 +80,7 @@ permalink: "member_page_{{ member.member_id }}.html"
     $(document).ready(function() {
         $('#member_bill_table').DataTable( {
             "ajax": {
-              "url": "../data/member_vote_data_{{ session }}_{{ member.member_id }}.json",
+              "url": "data/members/member_vote_data_{{ session }}_{{ member.member_id }}.json",
               "type": "GET",
             },
             "order": [[0, 'desc']], // sort by date reversed
