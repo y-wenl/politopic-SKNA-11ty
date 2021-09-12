@@ -1,4 +1,4 @@
-// adapted from Jerôme Coupé, https://www.webstoemp.com/blog/from-jekyll-to-eleventy/
+// partially adapted from Jerôme Coupé, https://www.webstoemp.com/blog/from-jekyll-to-eleventy/
 
 module.exports = {
     url: "https://www.demokra.net",
@@ -17,5 +17,18 @@ module.exports = {
     },
     stripHTTP: url => {
         return url.replace("http://", "").replace("https://", "")
+    },
+    getVals: dictionary => {
+    // https://stackoverflow.com/questions/11734417/javascript-equivalent-of-pythons-values-dictionary-method
+    return Object.keys(dictionary).map(function(key){
+        return dictionary[key];
+    });
+    },
+    sort_by_string: (arr, field) => {
+        return arr.sort(
+            function(a, b) {
+                return String(a[field]).localeCompare(String(b[field]))
+            }
+        );
     },
 };
