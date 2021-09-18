@@ -1,5 +1,9 @@
 name: SKNA 11ty builder
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   Build-SKNA-11ty:
     runs-on: ubuntu-latest
