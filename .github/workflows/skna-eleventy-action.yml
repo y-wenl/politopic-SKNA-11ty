@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: eleventy
+          repository: y-wenl/politopic-SKNA-11ty
+          token: ${{ secrets.PAT }}
       - name: Check out data
         uses: actions/checkout@v2
         with:
