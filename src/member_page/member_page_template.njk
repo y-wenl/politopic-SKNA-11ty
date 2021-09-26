@@ -14,7 +14,7 @@ permalink: "member_page_{{ member.member_id }}.html"
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <title>{{ member.name }} - 투표 기록</title>
+  <title>{{ member.name }} - 투표 기록 | 한국국회 | Politopic</title>
 
   <link rel="stylesheet" type="text/css" href="/css/water_light_n.css">
 
@@ -222,7 +222,11 @@ permalink: "member_page_{{ member.member_id }}.html"
 
 <nav class="primary-nav" aria-label="메뉴">
     <ul>
-        <li><a href="/skna/index.html" arial-label="한국국회 홈에 돌아가기">❰ 한국국회 홈</a></li>
+        <li>Politopic</li>
+        |
+        <li><a href="/skna/" arial-label="한국국회 홈에 돌아가기">한국국회</a></li>
+        ❱
+        <li><a href="">{{ member.name }}</a></li>
         <li class="member-search-li"><label>의원 검색:</label>
             <!--<input type="search" class="" placeholder="">-->
                 <!-- TODO: is haspopup="true" correct here?-->
