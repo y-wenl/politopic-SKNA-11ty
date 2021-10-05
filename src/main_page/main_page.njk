@@ -200,8 +200,8 @@ permalink: "index.html"
             <select class="js-member-select" name="member" id="member-search-select" style="width: 50%" aria-haspopup="true">
                 <option value=""></option>
                 <!--TODO deal with different sessions-->
-                {% for mem_id,mem in members_fullinfo_session21 %}
-                <option value="/skna/member_page_{{ mem_id }}.html">{{ mem.name }} - {{ mem.district }}</option>
+                {% for mem in sort_by_string(getVals(members_fullinfo_session21),'name') %}
+                <option value="/skna/member_page_{{ mem.member_id }}.html">{{ mem.name }} - {{ mem.district }}</option>
                 {% endfor %}
             </select>
             <input type="button" name="member-submit" value="제출" onclick="goToMemberPage()">
