@@ -4,7 +4,7 @@ module.exports = {
     url: "https://www.demokra.net",
     baseUrl: "/skna/",
     author: "N. White",
-    buildDate: (new Date().getFullYear()) + "-" + String(new Date().getMonth() + 1).padStart(2,'0') + "-" + (new Date().getDate()),
+    buildDate: (new Date().getFullYear()) + "-" + String(new Date().getMonth() + 1).padStart(2,'0') + "-" + String(new Date().getDate()).padStart(2,'0'),
     dobToAge: dobstr => {
         var today = new Date();
         var dob = new Date(dobstr);
