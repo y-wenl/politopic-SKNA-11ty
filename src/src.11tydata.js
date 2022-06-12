@@ -1,7 +1,7 @@
 // partially adapted from Jerôme Coupé, https://www.webstoemp.com/blog/from-jekyll-to-eleventy/
 
 module.exports = {
-    url: "https://www.demokra.net",
+    url: "https://www.politopic.net",
     baseUrl: "/skna/",
     author: "N. White",
     buildDate: (new Date().getFullYear()) + "-" + String(new Date().getMonth() + 1).padStart(2,'0') + "-" + String(new Date().getDate()).padStart(2,'0'),
