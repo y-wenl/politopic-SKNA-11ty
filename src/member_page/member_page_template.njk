@@ -259,7 +259,7 @@ permalink: "member_page_{{ member.member_id }}.html"
 <table class="member_info member_info1">
     <tr>
         <th scope="row">정당</th>
-        <td>{{ member.party }}</td>
+        <td>{{ member.party_fullname }}</td>
     </tr>
     <tr>
         <th scope="row">정당 충실</th>
@@ -270,9 +270,13 @@ permalink: "member_page_{{ member.member_id }}.html"
         {% endif %}
     </tr>
     <tr>
-        <th scope="row">결석속도</th>
-        {% if member.absenteeism %}
-        <td>{{ (member.absenteeism*100).toFixed(1) }}% (국회: {{ member.absenteeism_rank }}번째/{{ member.totalmembers }}; 정당: {{ member.absenteeism_party_rank }}번째/{{ member.partysize }})</td>
+        <th scope="row">출석속도</th>
+        {% if member.attendance %}
+        {% if member.attendance_party_rank %}
+        <td>{{ (member.attendance*100).toFixed(1) }}% (국회: {{ member.attendance_rank }}번째/{{ member.totalmembers }}; 정당: {{ member.attendance_party_rank }}번째/{{ member.partysize }})</td>
+        {% else %}
+        <td>{{ (member.attendance*100).toFixed(1) }}% (국회: {{ member.attendance_rank }}번째/{{ member.totalmembers }})</td>
+        {% endif %}
         {% else %}
         <td></td>
         {% endif %}
