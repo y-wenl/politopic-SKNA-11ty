@@ -310,6 +310,18 @@ permalink: "member_page_{{ member.member_id }}.html"
         <td>{{ member.dob }} ({{ dobToAge(member.dob) }}살)</td>
     </tr>
     <tr>
+        <th scope="row">젠더</th>
+        <td>
+        {% if member.gender == "M" %}
+        남성
+        {% elif member.gender == "F" %}
+        여성
+        {% else %}
+        {{ member.gender }}
+        {% endif %}
+        </td>
+    </tr>
+    <tr>
         <th scope="row">국회 웹사이트</th>
         <td><a href="https://www.assembly.go.kr/assm/memPop/memPopup.do?dept_cd={{ member.member_id }}" target="_blank">{{ member.name }} 국회의원 소개</a></td>
     </tr>
